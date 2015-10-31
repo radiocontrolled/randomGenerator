@@ -1,0 +1,25 @@
+{
+  "name": "randomAdviceGenerator",
+  "version": "0.0.0",
+  "homepage": "https://github.com/radiocontrolled/randomGenerator",
+  "authors": [
+    "radiocontrolled <radiocontrolled@gmail.com>"
+  ],
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jasmine": "~2.3.4",
+    "requirejs": "~2.1.20",
+    "tabletop": "~1.4.2"
+  }
+}

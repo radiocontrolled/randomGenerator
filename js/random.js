@@ -1,55 +1,72 @@
 (function() {
 
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1VJHM20AerCCo1tkCGmYEo2HetyiLouIVXOIg90MXnlo/pubhtml'; 
-  var random; 
+  var img,
+    figcaption,
+    spreadsheetData,
+    button, 
+    usedIndex;
 
   function init() {
 	  Tabletop.init({ 
       key: public_spreadsheet_url,
-		  callback: getRandomAnswer,
+		  callback: setIndex,
       simpleSheet: true 
-    })
+    });
+    createDivForAnswers();
   }
 
-  window.onload = function() { 
-    init(); 
-  };
-
-  var populateAnswerDiv = function(rand) {
-
+  function createDivForAnswers() {
     var answer = document.getElementById("answer");
     var figure = document.createElement("figure");
-    var img = document.createElement("img");
-    var figcaption = document.createElement("figcaption");
-
-    img.src = rand.ImageURL;
-    img.alt = rand.ImageAlternativeText;
-    figcaption.innerHTML = rand.ImageCaption;
+    button = document.createElement("button");
+    img = document.createElement("img");
+    figcaption = document.createElement("figcaption");
 
     answer.appendChild(figure);
     figure.appendChild(img);
     figure.appendChild(figcaption);
+    answer.appendChild(button);
+    
+    button.name = "answerButton";
+    button.innerHTML = "Get Random Answer";
+    button.addEventListener("click", function() {
+      displayAnswerAndCountdownIndex(spreadsheetData, usedIndex);
+    });
 
-  };
+  }
 
-  /* 
-    to-do:
-    display something random, 
-    but don't display the same thing twice, 
-    and also don't display a thing that doesn't have a caption, image and image text
-    then when the user clicks or keybord selects the button
-    call this function again.
-  */
+  function populateAnswerDiv(rand) {
+    img.src = rand.ImageURL;
+    img.alt = rand.ImageAlternativeText;
+    figcaption.innerHTML = rand.ImageCaption;
+  }
 
-  var getRandomAnswer = function(data) {
-    var keys = Object.keys(data);
-    random = data[keys[ keys.length * Math.random() << 0]];
-    populateAnswerDiv(random);
+  function destroy() {
+    img.src = "";
+    img.alt = "";
+    figcaption.innerHTML = "I have no more answers for you.";
+  }
+
+  function setIndex(data, tabletop) {
+    spreadsheetData = data; 
+    usedIndex = data.length - 1;
+    displayAnswerAndCountdownIndex(spreadsheetData, usedIndex);
+  }
+
+  function displayAnswerAndCountdownIndex(data, index) {
+    if(index >= 0) {
+      populateAnswerDiv(data[index]);
+      usedIndex -= 1;
+    }
+    else {
+      destroy();
+    }
+  }
   
+  window.onload = function() { 
+    init(); 
   };
-
-
-  getRandomAnswer();
 
  
 })();
