@@ -46,6 +46,7 @@
     img.src = "";
     img.alt = "";
     figcaption.innerHTML = "I have no more answers for you.";
+    button.parentNode.removeChild(button);
   }
 
   function setIndex(data, tabletop) {
