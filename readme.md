@@ -5,5 +5,4 @@ This is a "random advice generator" based on the Telegraph's <a href="http://www
 
 # roadmap 
 
-* add spinner to display while Tabletop is requesting Google Spreadsheet data
 * tests

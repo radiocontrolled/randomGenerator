@@ -49,6 +49,8 @@
   }
 
   function setIndex(data, tabletop) {
+    var spin = document.getElementsByClassName("throbber-loader")[0];
+    spin.parentNode.removeChild(spin);
     spreadsheetData = data; 
     usedIndex = data.length - 1;
     displayAnswerAndCountdownIndex(spreadsheetData, usedIndex);
