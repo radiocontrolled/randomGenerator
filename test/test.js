@@ -25,6 +25,6 @@
   test("createDivForAnswers() should contain a figure", function(assert){
     var actual = result.children[1];
     var expected = document.createElement("figure");
-
-    assert.equal(result.children[1], expected);
+    // why does this fail?
+    assert.equal(actual, expected);
   })
