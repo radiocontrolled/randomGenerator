@@ -10,19 +10,21 @@
   })
 
 
+  
   var result = random.createDivForAnswers();
 
   test("createDivForAnswers() should return an div of id answer", function(assert){
-    
-    result = result.id; 
+   
+    var actual = result.id; 
     var expected = "answer";
-    assert.equal(result, expected);
+    assert.equal(actual, expected);
+
+
   })
 
-  // test("createDivForAnswers() should contain a figure", function(assert){
-  //   for(var i in result.childNodes) {
-  //     if()
-  //   }
-  //   var expected = "answer";
-  //   assert.equal(result, expected);
-  // })
+  test("createDivForAnswers() should contain a figure", function(assert){
+    var actual = result.children[1];
+    var expected = document.createElement("figure");
+
+    assert.equal(result.children[1], expected);
+  })
