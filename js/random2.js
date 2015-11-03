@@ -26,11 +26,26 @@ var random = (function () {
 
   }
 
+  function populateAnswerDivIMG(rand) {
+    img.src = rand.ImageURL;
+    img.alt = rand.ImageAlternativeText;
+
+    return img;
+    
+  }
+
+  function populateAnswerDivFigure(rand) {
+    figcaption.innerHTML = rand.ImageCaption;
+
+    return figcaption;
+  }
 
 
   return {
     public_spreadsheet_url : public_spreadsheet_url,
-    createDivForAnswers : createDivForAnswers
+    createDivForAnswers : createDivForAnswers,
+    populateAnswerDivIMG : populateAnswerDivIMG,
+    populateAnswerDivFigure : populateAnswerDivFigure
   };
 
 }());

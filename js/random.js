@@ -37,6 +37,7 @@
   }
 
   function populateAnswerDiv(rand) {
+    console.log(rand);
     img.src = rand.ImageURL;
     img.alt = rand.ImageAlternativeText;
     figcaption.innerHTML = rand.ImageCaption;
