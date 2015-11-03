@@ -8,6 +8,7 @@ var random = (function () {
     usedIndex;
 
   function createDivForAnswers() {
+
     var answer = document.getElementById("answer");
     var figure = document.createElement("figure");
     button = document.createElement("button");
@@ -18,7 +19,6 @@ var random = (function () {
     figure.appendChild(img);
     figure.appendChild(figcaption);
     answer.appendChild(button);
-    
     button.name = "answerButton";
     button.innerHTML = "Get Random Answer";
   
