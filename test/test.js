@@ -67,15 +67,21 @@ test("populateAnswerDivIMG should set img alt", function(){
   equal(actual,expected);
 });
 
-// test("populateAnswerDivFigure should set the image caption", function(){
-//   var expected = document.createElement("figcaption");
-//   expected.innerHTML = "hey there";
-//   var actual = random.populateAnswerDivIMG(obj).innerHTML;
-//   console.log(expected.firstChild);
-//   equal(actual,expected);
-// });
+test("populateAnswerDivFigure should set the image caption", function(){
+  var expected = document.createElement("figcaption");
+  expected.innerHTML = "hey there";
+  var actual = random.populateAnswerDivFigure(obj).innerHTML;
+  equal(actual,expected.innerHTML);
+});
 
- 
+// test("destroy should set the image source, alt and figcaption to be an empty string", function(){
+//   var fig = document.getElementsByTagName("figure")[0];
+//   console.log(fig.childNodes);
+//   var expected = random.destroy(fig);
+//   console.log(expected.childNodes);
+
+
+// });
 
 
  

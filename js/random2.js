@@ -23,7 +23,6 @@ var random = (function () {
     button.innerHTML = "Get Random Answer";
   
     return answer;
-
   }
 
   function populateAnswerDivIMG(rand) {
@@ -31,7 +30,6 @@ var random = (function () {
     img.alt = rand.ImageAlternativeText;
 
     return img;
-    
   }
 
   function populateAnswerDivFigure(rand) {
@@ -41,11 +39,34 @@ var random = (function () {
   }
 
 
+//   function destroy(figure) {
+
+//     for(var prop in figure) {
+      
+// //      if(figcaption.hasOwnProperty(prop)) {
+// console.log(figure[prop]);
+//         if(prop.nodeName = "IMG") {
+//           prop.src = "";
+//           prop.alt = "";
+//         }
+//         if(prop.nodeName = "FIGCAPION") {
+//           figcaption.innerHTML  = "I have no more answers for you.";
+//         }
+//   //    }
+//     }
+
+   
+//     button.parentNode.removeChild(button);
+
+//     return figure;
+  }
+
   return {
     public_spreadsheet_url : public_spreadsheet_url,
     createDivForAnswers : createDivForAnswers,
     populateAnswerDivIMG : populateAnswerDivIMG,
-    populateAnswerDivFigure : populateAnswerDivFigure
+    populateAnswerDivFigure : populateAnswerDivFigure,
+    destroy : destroy
   };
 
 }());
