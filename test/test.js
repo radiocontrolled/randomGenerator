@@ -74,7 +74,7 @@ test("populateAnswerDivFigure should set the image caption", function(){
   equal(actual,expected.innerHTML);
 });
 
-test("destroy should set the image source to be empty", function(){
+test("destroy should remove the image and figcaption from figure element", function(){
   var expected = 0;
   var figure = document.getElementsByTagName("figure")[0];
   var actual = random.destroy(figure);
