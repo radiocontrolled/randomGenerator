@@ -83,5 +83,3 @@ test("destroy should remove the image and figcaption from figure element", funct
 
 
  
-
- 

@@ -1,4 +1,5 @@
-function Random {
+(function() {
+
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1VJHM20AerCCo1tkCGmYEo2HetyiLouIVXOIg90MXnlo/pubhtml'; 
   var img,
     figcaption,
@@ -7,9 +8,9 @@ function Random {
     usedIndex;
 
   function init() {
-    Tabletop.init({ 
+	  Tabletop.init({ 
       key: public_spreadsheet_url,
-      callback: setIndex,
+		  callback: setIndex,
       simpleSheet: true 
     });
     createDivForAnswers();
@@ -36,6 +37,7 @@ function Random {
   }
 
   function populateAnswerDiv(rand) {
+    console.log(rand);
     img.src = rand.ImageURL;
     img.alt = rand.ImageAlternativeText;
     figcaption.innerHTML = rand.ImageCaption;
@@ -69,7 +71,6 @@ function Random {
   window.onload = function() { 
     init(); 
   };
-    
-}
 
-var answers = new Random();
+ 
+})();
