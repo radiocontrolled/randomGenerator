@@ -6,3 +6,4 @@ This is a "random advice generator" based on the Telegraph's <a href="http://www
 # roadmap 
 
 * tests
+** currently refactoring random.js in random2.js along with tests. 
