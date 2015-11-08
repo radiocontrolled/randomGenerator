@@ -15,31 +15,33 @@ var random = (function () {
       callback: setIndex,
       simpleSheet: true 
     });
-    createDivForAnswers();
+
   }
 
-  function createDivForAnswers() {
-    var answer = document.getElementById("answer");
-    var figure = document.createElement("figure");
-    button = document.createElement("button");
-    img = document.createElement("img");
-    img.classList.add("random-img");
-    figcaption = document.createElement("figcaption");
-    figcaption.classList.add("random-figcaption");
+  var createDivForAnswers = function() {
+      var answer = document.getElementById("answer");
+      var figure = document.createElement("figure");
+      figure.classList.add("random-figure");
+      button = document.createElement("button");
+      img = document.createElement("img");
+      img.classList.add("random-img");
+      figcaption = document.createElement("figcaption");
+      figcaption.classList.add("random-figcaption");
 
-    answer.appendChild(figure);
-    figure.appendChild(img);
-    figure.appendChild(figcaption);
-    answer.appendChild(button);
-    button.name = "answerButton";
-    button.classList.add("random-button");
-    button.innerHTML = "Get Random Answer";
+      answer.appendChild(figure);
+      figure.appendChild(img);
+      figure.appendChild(figcaption);
+      answer.appendChild(button);
+      button.name = "answerButton";
+      button.classList.add("random-button");
+      button.innerHTML = "Get Random Answer";
 
-    button.addEventListener("click", function() {
-      displayAnswerAndCountdownIndex(spreadsheetData, usedIndex);
-    });
+      button.addEventListener("click", function() {
+        displayAnswerAndCountdownIndex(spreadsheetData, usedIndex);
+      });
   
-    return answer;
+      return answer;
+
   }
 
   function populateAnswerDivIMG(rand) {
@@ -70,6 +72,7 @@ var random = (function () {
   function setIndex(data, tabletop) {
     var spin = document.getElementsByClassName("throbber-loader")[0];
     spin.parentNode.removeChild(spin);
+    createDivForAnswers();
     spreadsheetData = data; 
     usedIndex = data.length - 1;
     displayAnswerAndCountdownIndex(spreadsheetData, usedIndex);

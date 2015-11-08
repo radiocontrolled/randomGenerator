@@ -1,5 +1,3 @@
-// testing variables
-
 var result = random.createDivForAnswers();
 
 var obj = {
