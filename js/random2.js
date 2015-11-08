@@ -34,31 +34,17 @@ var random = (function () {
 
   function populateAnswerDivFigure(rand) {
     figcaption.innerHTML = rand.ImageCaption;
-
     return figcaption;
   }
 
 
-//   function destroy(figure) {
-
-//     for(var prop in figure) {
-      
-// //      if(figcaption.hasOwnProperty(prop)) {
-// console.log(figure[prop]);
-//         if(prop.nodeName = "IMG") {
-//           prop.src = "";
-//           prop.alt = "";
-//         }
-//         if(prop.nodeName = "FIGCAPION") {
-//           figcaption.innerHTML  = "I have no more answers for you.";
-//         }
-//   //    }
-//     }
-
-   
-//     button.parentNode.removeChild(button);
-
-//     return figure;
+  function destroy(figure) {
+    var img = figure.firstChild;
+    var figcaption = figure.lastChild;
+    img.parentNode.removeChild(img);
+    figcaption.parentNode.removeChild(figcaption);
+    button.parentNode.removeChild(button);
+    return figure.childNodes.length;
   }
 
   return {

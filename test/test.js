@@ -74,14 +74,12 @@ test("populateAnswerDivFigure should set the image caption", function(){
   equal(actual,expected.innerHTML);
 });
 
-// test("destroy should set the image source, alt and figcaption to be an empty string", function(){
-//   var fig = document.getElementsByTagName("figure")[0];
-//   console.log(fig.childNodes);
-//   var expected = random.destroy(fig);
-//   console.log(expected.childNodes);
-
-
-// });
+test("destroy should set the image source to be empty", function(){
+  var expected = 0;
+  var figure = document.getElementsByTagName("figure")[0];
+  var actual = random.destroy(figure);
+  equal(actual,expected);
+});
 
 
  
